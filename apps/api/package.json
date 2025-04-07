@@ -9,6 +9,7 @@
     "@fastify/cors": "^11.0.1",
     "@prisma/client": "^6.5.0",
     "@saas/auth": "*",
+    "bcryptjs": "^3.0.2",
     "fastify": "^5.2.2",
     "fastify-type-provider-zod": "^4.0.2",
     "zod": "^3.24.2"
@@ -17,6 +18,7 @@
     "@saas/eslint-config": "*",
     "@saas/prettier": "*",
     "@saas/tsconfig": "*",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^22.13.10",
     "prisma": "^6.5.0",
     "tsx": "^4.19.3"
@@ -24,7 +26,7 @@
   "prettier": "@saas/prettier",
   "eslintConfig": {
     "extends": [
-      "@saas/eslint-config/base"
+      "@saas/eslint-config/node"
     ]
   }
 }
