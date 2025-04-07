@@ -8,6 +8,7 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.6.0",
     "turbo": "^2.4.2"
   },
   "engines": {

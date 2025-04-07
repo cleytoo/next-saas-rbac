@@ -28,5 +28,9 @@
     "extends": [
       "@saas/eslint-config/node"
     ]
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
+  
 }
