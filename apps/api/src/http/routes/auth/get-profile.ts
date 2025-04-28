@@ -4,6 +4,8 @@ import { z } from 'zod'
 
 import { prisma } from '@/lib/prisma'
 
+import { BadRequestError, UnauthorizedError } from '../_errors'
+
 export async function getProfile(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get(
     '/profile',
@@ -24,7 +26,9 @@ export async function getProfile(app: FastifyInstance) {
       },
     },
     async (request, reply) => {
-      const { sub } = await request.jwtVerify<{ sub: string }>()
+      const { sub } = await request.jwtVerify<{ sub: string }>().catch(() => {
+        throw new UnauthorizedError()
+      })
 
       const user = await prisma.user.findUnique({
         select: {
@@ -36,7 +40,7 @@ export async function getProfile(app: FastifyInstance) {
         where: { id: sub },
       })
 
-      if (!user) throw new Error('User not found.')
+      if (!user) throw new BadRequestError('User not found.')
 
       return reply.send({ user })
     },
