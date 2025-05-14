@@ -5,12 +5,12 @@
 
   "compilerOptions": {
     "lib": ["es2023"],
-    "module": "ESNext",
+    "module": "node16",
     "target": "es2022",
 
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node16"
   }
 }
