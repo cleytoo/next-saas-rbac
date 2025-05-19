@@ -11,7 +11,15 @@ export function setupSwagger(app: FastifyInstance) {
         description: 'Full stack saas app with multi-tenant & RBAC',
         version: '1.0.0',
       },
-      servers: [],
+      components: {
+        securitySchemes: {
+          bearerAuth: {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+          },
+        },
+      },
     },
     transform: jsonSchemaTransform,
   })
