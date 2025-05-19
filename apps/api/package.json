@@ -2,7 +2,6 @@
   "name": "@saas/api",
   "version": "1.0.0",
   "scripts": {
-    "devs": "tsx watch src/http/server.ts",
     "dev": "dotenv -e ../../.env -- tsx watch src/http/server.ts",
     "db:migrate": "dotenv -e ../../.env -- prisma migrate dev",
     "db:studio": "dotenv -e ../../.env -- prisma studio"
