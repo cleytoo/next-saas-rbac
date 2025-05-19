@@ -11,6 +11,7 @@ import { createAccount } from './routes/auth/create-account'
 import { getProfile } from './routes/auth/get-profile'
 import { requestPasswordRecovery } from './routes/auth/password-recovery'
 import { resetPassword } from './routes/auth/reset-password'
+import { createOrganization } from './routes/orgs/create-organization'
 import { setupSwagger } from './setup-swagger'
 
 const app = fastify().withTypeProvider<fz.ZodTypeProvider>()
@@ -34,6 +35,8 @@ app.register(authenticateWithGithub)
 app.register(getProfile)
 app.register(requestPasswordRecovery)
 app.register(resetPassword)
+
+app.register(createOrganization)
 
 app
   .listen({ port: env.SERVER_PORT })
